@@ -74,8 +74,7 @@ def map(pos):
 
         button = [
             [
-             InlineKeyboardButton(text = 'Support Chat', url = SUPPORT_CHAT_LINK),
-             InlineKeyboardButton(text = 'Feature Request', url = "https://github.com/viperadnan-git/google-drive-telegram-bot/issues/new")
+             InlineKeyboardButton(text = 'Support Chat', url = SUPPORT_CHAT_LINK)
             ],
             [InlineKeyboardButton(text = '<--', callback_data = f"help+{pos-1}")]
 
