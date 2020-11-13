@@ -5,7 +5,7 @@ class config:
     DATABASE_URL = "postgres://wkzyonufulsuxt:9fd7165e1a0617d3d2119074f3790e41bae1d9f6d715a8307af0a0d26fa50c61@ec2-34-237-247-76.compute-1.amazonaws.com:5432/d3obkiqs0mjqpl"
     SUDO_USERS = "790744862" # Sepearted by space.
     SUPPORT_CHAT_LINK = "https://t.me/jigargdrive"
-    DOWNLOAD_DIRECTORY = "./Jdownloads/"
+    DOWNLOAD_DIRECTORY = "./Downloads/Jigar_gdrive_bot/"
 
 
 class BotCommands:
