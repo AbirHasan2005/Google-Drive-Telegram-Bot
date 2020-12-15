@@ -20,7 +20,7 @@ G_DRIVE_CLIENT_ID = "202264815644.apps.googleusercontent.com"
 G_DRIVE_CLIENT_SECRET = "X4Z3ca8xfWDb1Voo-F9a7ZxJ"
 flow = None
 
-@Client.on_message(filters.private & filters.incoming & filters.command(BotCommands.Authorize))
+@Client.on_message(filters.incoming & filters.command(BotCommands.Authorize))
 async def _auth(client, message):
   user_id = message.from_user.id
   creds = gDriveDB.search(user_id)
@@ -49,7 +49,7 @@ async def _auth(client, message):
     except Exception as e:
       await message.reply_text(f"**ERROR:** ```{e}```", quote=True)
 
-@Client.on_message(filters.private & filters.incoming & filters.command(BotCommands.Revoke) & CustomFilters.auth_users)
+@Client.on_message(filters.incoming & filters.command(BotCommands.Revoke))
 def _revoke(client, message):
   user_id = message.from_user.id
   try:
@@ -60,7 +60,7 @@ def _revoke(client, message):
     message.reply_text(f"**ERROR:** ```{e}```", quote=True)
 
 
-@Client.on_message(filters.private & filters.incoming & filters.text & ~CustomFilters.auth_users)
+@Client.on_message(filters.incoming & filters.text)
 async def _token(client, message):
   token = message.text.split()[-1]
   WORD = len(token)
